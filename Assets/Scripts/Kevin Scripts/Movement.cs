@@ -8,17 +8,18 @@ public class Movement : MonoBehaviour
 
     public float moveSpeed;
     public float jumpForce;
-
+    private float _moveInput;
     private Rigidbody2D _rb2D;
 
     public Transform groundCheckPoint, groundCheckPoint2;
     public LayerMask whatIsGround;
     private bool _isGrounded;
 
-    public float hangTime = .2f;
+    public float hangTime = .1f;
     private float _hangCounter;
-    
-    
+    //private float moveRightLeft;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +29,27 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        _moveInput = Input.GetAxisRaw("Horizontal");
         //Movement horizontally
-        _rb2D.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, _rb2D.velocity.y);
+        if (_isGrounded)
+        {
+            _rb2D.velocity = new Vector2(_moveInput * moveSpeed, _rb2D.velocity.y);
+        }
+
+        /* if (_moveInput > 0 && _isGrounded)
+         {
+             moveRightLeft = moveSpeed;
+         }
+         else if (_moveInput < 0 && _isGrounded)
+         {
+             moveRightLeft = -moveSpeed;
+         }
+        */
+
         //check if player is on the ground
         _isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.1f, whatIsGround) ||
                      Physics2D.OverlapCircle(groundCheckPoint2.position, 0.1f, whatIsGround);
-        
+
         //if the player jumps a bit to late he will still jump
         if (_isGrounded)
         {
@@ -44,7 +59,7 @@ public class Movement : MonoBehaviour
         {
             _hangCounter -= Time.deltaTime;
         }
-        
+
         //jump in the air
         if (Input.GetButtonDown("Jump") && _hangCounter > 0f)
         {
