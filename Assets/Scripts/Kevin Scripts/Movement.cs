@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
 
     public float hangTime = .1f;
     private float _hangCounter;
-    //private float moveRightLeft;
+    public float moveRightLeft;
 
 
     // Start is called before the first frame update
@@ -30,22 +30,22 @@ public class Movement : MonoBehaviour
     void Update()
     {
         _moveInput = Input.GetAxisRaw("Horizontal");
+
+        if (_moveInput > 0 && _isGrounded)
+        {
+            moveRightLeft = moveSpeed;
+        }
+        else if (_moveInput < 0 && _isGrounded)
+        {
+            moveRightLeft = -moveSpeed;
+        }
+        
         //Movement horizontally
         if (_isGrounded)
         {
             _rb2D.velocity = new Vector2(_moveInput * moveSpeed, _rb2D.velocity.y);
         }
-
-        /* if (_moveInput > 0 && _isGrounded)
-         {
-             moveRightLeft = moveSpeed;
-         }
-         else if (_moveInput < 0 && _isGrounded)
-         {
-             moveRightLeft = -moveSpeed;
-         }
-        */
-
+        
         //check if player is on the ground
         _isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, 0.1f, whatIsGround) ||
                      Physics2D.OverlapCircle(groundCheckPoint2.position, 0.1f, whatIsGround);
@@ -61,14 +61,14 @@ public class Movement : MonoBehaviour
         }
 
         //jump in the air
-        if (Input.GetButtonDown("Jump") && _hangCounter > 0f)
+        if (Input.GetButton("Jump") && _hangCounter > 0f)
         {
-            _rb2D.velocity = new Vector2(_rb2D.velocity.x, jumpForce);
+            _rb2D.velocity = new Vector2(moveRightLeft, jumpForce);
         }
         //jump reduced in height if jump button is let go before reaching max height
         if (Input.GetButtonUp("Jump") && _rb2D.velocity.y > 0)
         {
-            _rb2D.velocity = new Vector2(_rb2D.velocity.x, _rb2D.velocity.y * .5f);
+            _rb2D.velocity = new Vector2(moveRightLeft, _rb2D.velocity.y * .5f);
         }
     }
 }
