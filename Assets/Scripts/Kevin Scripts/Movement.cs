@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     private float _moveRightLeft;
 
     private bool _touchingWall;
-    public Transform wallCheck;
+    public Transform wallCheck, wallCheck2;
     public LayerMask wallLayer;
     private bool _wallJumping;
     public float pushOutFromWallForce;
@@ -50,7 +50,8 @@ public class Movement : MonoBehaviour
                      Physics2D.OverlapCircle(groundCheckPoint2.position, 0.1f, whatIsGround);
 
         //check if player is touching a wall
-        _touchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.15f, wallLayer);
+        _touchingWall = Physics2D.OverlapCircle(wallCheck.position, 0.1f, wallLayer) || 
+                        Physics2D.OverlapCircle(wallCheck2.position, 0.1f, wallLayer);
 
         //if the player jumps a bit to late he will still jump and movement only when grounded cant change mid air
         if (_isGrounded)
