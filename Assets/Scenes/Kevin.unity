@@ -1507,7 +1507,7 @@ Transform:
   - {fileID: 1522053644}
   - {fileID: 199574853}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1218788256
 GameObject:
@@ -2813,60 +2813,60 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1001 &1398276860928559945
+--- !u!1001 &406554738663121861
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1398276861227547047, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.0587503
+      value: 1.0367362
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1798222
+      value: 3.838377
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1398276861227547067, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+    - target: {fileID: 406554737455998187, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 406554737455998191, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
+      propertyPath: m_Name
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c438f5e97265f440a336c6e849ac315, type: 3}
