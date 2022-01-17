@@ -11,23 +11,26 @@ public class AutoGeneration : MonoBehaviour
     [SerializeField] private float maxHeightbtnPfm, minHeightbtnPfm;
 
     private float lastPfmHeight = 0;
+    private float lastPlatformx = 0;
 
     private void Start()
     {
         while (lastPfmHeight < 1000)
         {
             GameObject spawnedPfm = Instantiate(platforms[Random.Range(0, platforms.Count)], platformParent);
-            float x = Random.Range(boundsWalls.x, boundsWalls.y);
+            spawnedPfm.GetComponent<SpriteRenderer>().color = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));
+            float x = 0;
+            if (lastPlatformx < 0)
+                x = lastPlatformx + Random.Range(1, boundsWalls.y);
+            if (lastPlatformx > 0)
+                x = lastPlatformx - Random.Range(1, boundsWalls.y);
+            if (lastPlatformx == 0)
+                x = Random.Range(boundsWalls.x, boundsWalls.y);
             float y = lastPfmHeight + Random.Range(minHeightbtnPfm, maxHeightbtnPfm);
             spawnedPfm.transform.position = new Vector2(x, y);
 
             lastPfmHeight = y;
+            lastPlatformx = spawnedPfm.transform.position.x;
         }
-    }
-
-    IEnumerator SpawnPlatforms()
-    {
-
-        yield return null;
     }
 }
